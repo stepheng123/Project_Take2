@@ -12,3 +12,15 @@ The second page will display statistical data about Australia. This will be abou
 The third page will display exciting infographics about Australia. 
 
 
+## The Website
+Stephen has successfully developed a website with 4 webpages. Each webpage showcases the different aspects of Australia, which is population, economics, demographics and interesting facts. 
+
+
+## The Data
+The team explored different sites and sources to understand Australia better. The wikipedia pages on Australia was a good guide to obtain further data. For demographics, the team used the wikipedia page and scrapped the data for further analysis. 
+
+For economics and trade, the team managed to source information from the Department of Foreign Affairs and Trade. The data was available in Microsoft Excel format only for download. 
+
+## The Visualisation
+
+
