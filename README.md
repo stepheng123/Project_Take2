@@ -25,7 +25,7 @@ For economics and trade, the team managed to source information from the Departm
 Arvin used Pandas to scrap the tables of data from the wikipedia site. The data obtained was not readily available for use. He had to remove rows which did not contain data. He had to convert the type of data from objects to integers where neccessarry. 
 
 ## The Visualisation
-Based on the data collected, the team was excited to display the visualisation. Kom inspected the data and proposed 5 different charts to visualise the impact of trade and economy on Australia. 
+Based on the data collected, the team was excited to display the visualisation. Kom inspected the data and proposed 5 different charts to visualise the impact of trade and economy on Australia. Kom would like to show the relationship of different countries with Australia through trade. He also intended to use one chart to explain imported good to Australia. He also used another chart to show exported goods from Australia and its destination. He also intended to show the largest trade surplus to Australia from its trading partners. He also showcased the largest trade deficit from Australia to its trading partners. 
 
 As there was ample data from 1987, Stephen experimented with displaying the total goods exported from Australia. He made an interesting racing bar chart to display this information over time.
 
