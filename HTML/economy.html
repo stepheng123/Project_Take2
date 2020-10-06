@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Choropleth Map</title>
+  <title>Economy</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="bootstrap.css">
 </head>
@@ -45,15 +45,42 @@
   </div>
 </nav>
 
-  <!--Container-->
-  <div class="jumbotron">
-    <h1 class="display-5">Choropleth Map</h1>
-    <p class="lead">This is a Choropleth Map.</p>
-    <hr class="my-4">
-    <p>Latitude vs. Max Temperature</p>
-    <img src="Resources/images/max_temp.png">
-    <p></p>
+
+<!-- Creates the Overall Grid -->
+<div class="container">
+  <!-- First Row -->
+  <div class="row">
+    <!-- First (and only column) -->
+    <div class="col-md-12">
+      <br><br>
+      <h1 class="text-center">Economy: 
+        <small class="text-muted">of Australia</small>
+        </h1>
+      <br><br>
+    </div>
   </div>
+  <!--Row-->
+  <div class="row">
+   <!--1 of 2 Columns-->
+   <div class="col-md-6">
+    <br><br>
+     <p class="lead">The purpose of this project was to analyze how weather changes as you get closer to the Equator. 
+       To accopmlish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataser on over 500 cities.<p>
+      <br><br>
+      <p class="lead">After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude. Factors we looked at included:
+        Temperature, Cloudiness, Wind Speed, and Humidity. This site provides the course data and visualizations created as part of the analysis, 
+        as well as explanations and descriptions of any trends and correlations witnessed. </p>
+   </div>
+   <!--2 of 2 Columns-->
+   <div>
+      <h3 class="card-header">Visualizations</h3>
+      <div class="card-body">
+      <p class="card-text">Economy</p>
+      </div>
+      <a target="_blank"  href="Images/australia-economy.png">
+      <img style="height: 200px; width: 300px; display: block;" src="Images/australia-economy.png" alt="...">
+      </a>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
