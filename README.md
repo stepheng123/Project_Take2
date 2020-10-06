@@ -17,10 +17,17 @@ Stephen has successfully developed a website with 4 webpages. Each webpage showc
 
 
 ## The Data
-The team explored different sites and sources to understand Australia better. The wikipedia pages on Australia was a good guide to obtain further data. For demographics, the team used the wikipedia page and scrapped the data for further analysis. 
+The team explored different sites and sources to understand Australia better. The wikipedia pages on Australia was a good guide to obtain further data. For demographics, the team used the wikipedia page and scrapped the data for further analysis. Arvin used pandas to scrap the data for this purpose. 
 
 For economics and trade, the team managed to source information from the Department of Foreign Affairs and Trade. The data was available in Microsoft Excel format only for download. 
 
+### The Web Scraping
+Arvin used Pandas to scrap the tables of data from the wikipedia site. The data obtained was not readily available for use. He had to remove rows which did not contain data. He had to convert the type of data from objects to integers where neccessarry. 
+
 ## The Visualisation
+Based on the data collected, the team was excited to display the visualisation. Kom inspected the data and proposed 5 different charts to visualise the impact of trade and economy on Australia. 
+
+As there was ample data from 1987, Stephen experimented with displaying the total goods exported from Australia. He made an interesting racing bar chart to display this information over time.
+
 
 
