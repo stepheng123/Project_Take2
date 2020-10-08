@@ -28,14 +28,19 @@ def index():
         trade_arr = []
         for key in tb_YearTradeExport.__table__.columns.keys()[1:]:
             trade_temp = {'Country' : key}
-            trade_temp['Export'] = yte.__dict__[key]
-            trade_temp['Import'] = YearTradeImport[0].__dict__[key]
-            trade_arr.append(trade_temp)
             try:
-                sum_Export += float(yte.__dict__[key])
-                sum_Import += float(YearTradeImport[0].__dict__[key])
+                fExport = float(yte.__dict__[key])
+                fImport = float(YearTradeImport[0].__dict__[key])
             except:
-                pass
+                fExport = 0
+                fImport = 0
+            trade_temp['Export'] = fExport
+            trade_temp['Import'] = fImport
+            trade_temp['Total'] = fExport + fImport
+            trade_temp['Balance'] = fExport - fImport
+            sum_Export += fExport
+            sum_Import += fImport
+            trade_arr.append(trade_temp)
         trade_dict['Trade'] = trade_arr
         trade_dict['Export'] = sum_Export
         trade_dict['Import'] = sum_Import
