@@ -46,11 +46,11 @@ The team used various techniques and tools to storytell about Australia. The sou
 | Data file | Description | 
 |---|---|
 |aus_trade | this is an excel file obtained for the Department of Foreign Affairs and Trade. All the data used for economy is provided from this file. |
-- aus_trade.sqlite : this is the sqlite version of the excel file. This is used for the data visualisation. 
-- aus_trade.json : this is the json vesion of the excel file. 
-- distribution  : this is the csv file of the distribution of Australians across the country. This file was scrapped from a wikipedia page. 
-- ethinicity : this is the csv file of the ethnic make-up of Australians. This file was scrapped from a wikipedia page. 
-- population : this is the csv file showing the population growth of Australians from 1900. This is also scrapped from a wikipedia page. 
+| aus_trade.sqlite | this is the sqlite version of the excel file. This is used for the data visualisation| 
+| aus_trade.json | this is the json vesion of the excel file. |
+| distribution  | this is the csv file of the distribution of Australians across the country. This file was scrapped from a wikipedia page.| 
+| ethinicity | this is the csv file of the ethnic make-up of Australians. This file was scrapped from a wikipedia page.| 
+| population | this is the csv file showing the population growth of Australians from 1900. This is also scrapped from a wikipedia page| 
 
 For the mapping, the team used leaflet. There are two types of maps being showcased. These are : 
 - Heatmap of bushfire - this is using the chloropleth theme of leaflet.
