@@ -130,3 +130,8 @@ dmypy.json
 
 #keys
 /static/js/config.js
+.idea/modules.xml
+.idea/Project_Take2.iml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/codeStyles/codeStyleConfig.xml

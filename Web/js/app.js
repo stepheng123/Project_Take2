@@ -1,4 +1,5 @@
 var orgData;
+var cDATA;
 var DATA;
 
 function init(data){
@@ -7,14 +8,29 @@ function init(data){
         dYear.push(data[i].Year)
     }
     dYear.sort().reverse();
-
     const seld = d3Select.select('#selDataset');
     dYear.forEach(d=>{
-        let opt = seld.append('option')
+        seld.append('option')
             .attr('value', d)
             .text(d);
     })
-    optionChanged(seld.node().value)
+
+    let dCountry =[];
+    const tempTrade = orgData[0].Trade;
+    for(let i=0; i<tempTrade.length; i++){
+        dCountry.push(tempTrade[i].Country)
+    }
+    console.log(dCountry);
+    dCountry.sort();
+    const selc = d3Select_Line.select('#selCountry');
+    dCountry.forEach(d=>{
+        selc.append('option')
+            .attr('value', d)
+            .text(d)
+    })
+
+    optionChanged(seld.node().value);
+    countryChanged(selc.node().value)
 }
 
 function dataFilter(fval){
@@ -64,7 +80,22 @@ function showTooltip(d) {
         .style("top", `${d3.mouse(this)[1]}px`)
         .style("left", `${d3.mouse(this)[0]}px`)
         .style("opacity", 0.5)
-        .html(`Country : ${d.Country}`)
+        .html(`Country : ${d.Country}<br>Balance : ${d.Balance.toFixed(2)}mil<br>Export : ${d.Export.toFixed(2)}mil<br>Import : ${d.Import.toFixed(2)}mil<br>Total : ${d.Total.toFixed(2)}mil`)
+        .on('click', hideTooltip)
+
+}
+
+function hideTooltip(d) {
+    tooltip
+        .transition()
+        .duration(200)
+        .style("opacity", 0)
+}
+
+function moveTooltip(d) {
+    tooltip
+        .style("left", (d3.mouse(this)[0]+30) + "px")
+        .style("top", (d3.mouse(this)[1]+30) + "px")
 }
 
 function bscatter(DATA){
@@ -87,7 +118,9 @@ function bscatter(DATA){
         .attr("fill", d => colorScaleOrdinal((d.Balance>0)?1:(d.Balance<0)?-1:0))
         .attr("opacity", "0.3")
         .attr("stroke", "black")
-        .on("mouseover", showTooltip)
+        .on("click", showTooltip)
+        // .on("mouseleave", hideTooltip )
+        // .on("mousemove", moveTooltip )
     gCircle.exit().remove()
 }
 // ===============================================================================================================
@@ -118,17 +151,19 @@ var yLinearScale_Bar = d3.scaleLinear()
 var gButtomAxis_Bar = chartGroup_Bar.append('g')
                                     .attr("transform", `translate(0, ${height_Bar})`);
 var gLeftAxis_Bar = chartGroup_Bar.append('g');
-// var zLinearScale_Bar = d3.scaleLinear().range([10, 50]);
-// var colorScaleOrdinal_Bar = d3.scaleOrdinal().range(['red', 'black', 'green']).domain([-1, 0, 1]);
 
 
 function barchart(DATA, topx){
     const topSlice = 10;
-    let topDATA;
+    let topDATA = [];
     let col = '';
+    // console.log('DATA');
     switch (topx){
         case 0: // Top Deficit
-            topDATA = DATA.sort((a, b) => a.Balance - b.Balance).slice(0,topSlice);
+            let temp = DATA.sort((a, b) => a.Balance - b.Balance).slice(0,topSlice);
+            for(let i=0; i<temp.length; i++){
+                topDATA.push(Object.assign({}, temp[i]))
+            }
             for(let i=0; i<topDATA.length; i++){
                 topDATA[i].Balance *= -1
             }
@@ -153,7 +188,6 @@ function barchart(DATA, topx){
 
     xLinearScale_Bar.domain(topDATA.map(d=>d.Country));
     yLinearScale_Bar.domain([d3.min(topDATA, d=>d[col]), d3.max(topDATA, d=>d[col])]);
-    // zLinearScale_Bar.domain([d3.min(topDATA, d=>d.Balance), d3.max(topDATA, d=>d.Balance)]);
 
     gButtomAxis_Bar.call(d3.axisBottom(xLinearScale_Bar))
                     .selectAll("text")
@@ -169,10 +203,197 @@ function barchart(DATA, topx){
         .transition().duration(1000)
         .attr("x", d => xLinearScale_Bar(d.Country))
         .attr("y", d => yLinearScale_Bar(d[col]))
-        .attr("width", 25)
+        .attr("width", xLinearScale_Bar.bandwidth())
         .attr("height", d=>height_Bar-yLinearScale_Bar(d[col]))
         .attr("fill", "pink")
     gBar.exit().remove()
+}
+// ===============================================================================================================
+
+// ===== Treemap ==========================================================================================
+const svgHeight_TMap = 700;
+const svgWidth_TMap = 900;
+const svgMargin_TMap = {
+    top : 25,
+    right : 25,
+    bottom : 75,
+    left : 75
+}
+const width_TMap = svgWidth_TMap - svgMargin_TMap.left - svgMargin_TMap.right;
+const height_TMap = svgHeight_TMap - svgMargin_TMap.top - svgMargin_TMap.bottom;
+
+const d3Select_TMap = d3.select('#treemapx');
+const svg_TMap = d3Select_TMap.append('svg')
+    .attr('height', svgHeight_TMap)
+    .attr('width', svgWidth_TMap);
+var chartGroup_TMap = svg_TMap.append('g').attr('transform', `translate(${svgMargin_TMap.left}, ${svgMargin_TMap.top})`);
+
+
+function Treemap(DATA, tradex){
+    const tradeX = ['Balance', 'Balance', 'Export', 'Import', 'Total'];
+    let arrSurplus = [];
+    let arrDeficit = [];
+    for(let i=0; i<DATA.length; i++){
+        let dt = Object.assign({}, DATA[i]);
+        dt["colname"] = "level3";
+        if(dt.Balance < 0){
+            dt.Balance *= -1;
+            arrDeficit.push(dt)
+        }else{
+            arrSurplus.push(dt)
+        }
+    }
+    let newDATA = {'children':[{'colname':'level2', 'name':'Surplus', 'children':arrSurplus}, {'colname':'level2', 'name':'Deficit', 'children':arrDeficit}]};
+
+    const root = d3.hierarchy(newDATA).sum(d=>d[tradeX[tradex]]);
+
+    d3.treemap().size([width_TMap, height_TMap]).paddingInner(4)(root);
+
+    const color = d3.scaleOrdinal()
+        .domain(['Deficit', 'Surplus'])
+        .range(['red', 'green']);
+
+    var gTMap1 = chartGroup_TMap.selectAll('rect').data(root.leaves())
+    gTMap1
+        .enter()
+        .append('rect')
+        .merge(gTMap1)
+        .attr('x', d=>d.x0)
+        .attr('y', d=>d.y0)
+        .attr('width', d=>d.x1-d.x0)
+        .attr('height', d=>d.y1-d.y0)
+        .style('stroke', 'black')
+        .style('fill', d=>(tradeX[tradex]=='Balance')?color(d.parent.data.name):'blue');
+
+    gTMap1.exit().remove()
+
+    var gTMap2 = chartGroup_TMap.selectAll('text').data(root.leaves())
+    gTMap2
+        .enter()
+        .append('text')
+        .merge(gTMap2)
+        .text(d=>d.data.Country)
+        .attr('x', d=>d.x0+7)
+        .attr('y',d=>d.y0+20)
+        .attr('font-size', '15px')
+        .attr('fill', 'white');
+    gTMap2.exit().remove()
+
+    var gTMap3 = chartGroup_TMap.selectAll('trades').data(root.leaves())
+    gTMap3
+        .enter()
+        .append('text')
+        .merge(gTMap3)
+        .text(d=>d.data.Total)
+        .attr('x', d=>d.x0+7)
+        .attr('y',d=>d.y0+35)
+        .attr('font-size', '10px')
+        .attr('fill', 'white');
+    gTMap3.exit().remove()
+
+}
+// ===============================================================================================================
+
+// ===== Line Chart ==========================================================================================
+const svgHeight_Line = 700;
+const svgWidth_Line = 900;
+const svgMargin_Line = {
+    top : 25,
+    right : 25,
+    bottom : 75,
+    left : 75
+}
+const width_Line = svgWidth_Line - svgMargin_Line.left - svgMargin_Line.right;
+const height_Line = svgHeight_Line - svgMargin_Line.top - svgMargin_Line.bottom;
+
+const d3Select_Line = d3.select('#linechartx');
+const svg_Line = d3Select_Line.append('svg')
+    .attr('height', svgHeight_Line)
+    .attr('width', svgWidth_Line);
+var chartGroup_Line = svg_Line.append('g').attr('transform', `translate(${svgMargin_Line.left}, ${svgMargin_Line.top})`);
+
+var xLinearScale_Line = d3.scaleLinear().range([0, width_Line]);
+var yLinearScale_Line = d3.scaleLinear().range([height_Line, 0]);
+
+var gButtomAxis_Line = chartGroup_Line.append('g').attr('transform', `translate(0,${height_Line})`);
+var gLeftAxis_Line = chartGroup_Line.append('g');
+
+
+
+var lineExp = chartGroup_Line
+    .append('g')
+    .append("path")
+var lineImp = chartGroup_Line
+    .append('g')
+    .append("path")
+var lineBal = chartGroup_Line
+    .append('g')
+    .append("path")
+var lineTot = chartGroup_Line
+    .append('g')
+    .append("path")
+
+
+function LineChart(DATA, tradex){
+
+    xLinearScale_Line.domain([d3.min(DATA, d=>d.Year), d3.max(DATA, d=>d.Year)]);
+    yLinearScale_Line.domain([d3.min(DATA, d=>d.Trade.Balance), d3.max(DATA, d=>d.Trade.Total)]);
+    gButtomAxis_Line.call(d3.axisBottom(xLinearScale_Line));
+    gLeftAxis_Line.call(d3.axisLeft(yLinearScale_Line));
+    let expDATA = [];
+    let impDATA = [];
+    let balDATA = [];
+    let totDATA = [];
+    for(let i=0; i<DATA.length; i++){
+        expDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Export})
+        impDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Import})
+        balDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Balance})
+        totDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Total})
+    }
+    lineExp
+        .datum(expDATA)
+        .transition()
+        .duration(1000)
+        .attr("d", d3.line()
+            .x(function(d) { return xLinearScale_Line(+d.time) })
+            .y(function(d) { return yLinearScale_Line(+d.value) })
+        )
+        .attr("stroke", 'red')
+        .attr("stroke-width", 4)
+        .attr('fill', 'none')
+    lineImp
+        .datum(impDATA)
+        .transition()
+        .duration(1000)
+        .attr("d", d3.line()
+            .x(function(d) { return xLinearScale_Line(+d.time) })
+            .y(function(d) { return yLinearScale_Line(+d.value) })
+        )
+        .attr("stroke", 'green')
+        .attr("stroke-width", 4)
+        .attr('fill', 'none')
+    lineBal
+        .datum(balDATA)
+        .transition()
+        .duration(1000)
+        .attr("d", d3.line()
+            .x(function(d) { return xLinearScale_Line(+d.time) })
+            .y(function(d) { return yLinearScale_Line(+d.value) })
+        )
+        .attr("stroke", 'blue')
+        .attr("stroke-width", 4)
+        .attr('fill', 'none')
+    lineTot
+        .datum(totDATA)
+        .transition()
+        .duration(1000)
+        .attr("d", d3.line()
+            .x(function(d) { return xLinearScale_Line(+d.time) })
+            .y(function(d) { return yLinearScale_Line(+d.value) })
+        )
+        .attr("stroke", 'yellow')
+        .attr("stroke-width", 4)
+        .attr('fill', 'none')
 }
 // ===============================================================================================================
 
@@ -180,7 +401,20 @@ function barchart(DATA, topx){
 function optionChanged(svalue){
     DATA = dataFilter(svalue);
     bscatter(DATA);
-    barchart(DATA,0)
+    barchart(DATA,0);
+    Treemap(DATA,0)
+}
+
+function countryChanged(svalue){
+    const tempData = orgData;
+    cDATA = [];
+    for(let i=0; i<tempData.length; i++){
+        cDATA.push({'Year':tempData[i].Year, 'Trade':tempData[i].Trade.find(({Country})=>Country==svalue)})
+    }
+    for(let i=0; i<cDATA.length; i++){
+        delete cDATA[i].Trade.Country
+    }
+    LineChart(cDATA, 0)
 }
 
 
