@@ -34,7 +34,6 @@
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Maps</a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="bubble.html">Bubble Map</a>
-        <a class="dropdown-item" href="connection.html">Connection Map</a>
         <a class="dropdown-item" href="choropleth.html">Choropleth Map</a>
       </div>
     </li>
@@ -58,23 +57,27 @@
   <!--Row-->
   <div class="row">
    <!--1 of 2 Columns-->
-   <div class="col-md-6">
+   <div class="col-md-12">
     <br><br>
-     <p class="lead">The purpose of this project was to analyze how weather changes as you get closer to the Equator. 
-       To accopmlish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataser on over 500 cities.<p>
+     <p class="lead">The graph below shows the population growth of Australians over time. At the turn of the 20th century, the country started with approximately 4 million people. This number was slow to grow for the first 50 years. One could infer that this is consistent with global
+       trends at that time. The first half of the 20th century witnessed 2 major world wars and a global pandemic called the Spanish Flu. <p>
       <br><br>
-      <p class="lead">After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude. Factors we looked at included:
-        Temperature, Cloudiness, Wind Speed, and Humidity. This site provides the course data and visualizations created as part of the analysis, 
-        as well as explanations and descriptions of any trends and correlations witnessed. </p>
+      <p class="lead">After the first 50 years, there's a sudden spur of growth. This is an interesting observation which is consistent with Australian's change in foreign policy. Australia opened its doors wide open to attract the best and brightest to its shores. This new policy saw a
+        steady increase of population. It increased the diversity and make-up of Australians.  </p>
    </div>
+
+   <body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="app.js"></script>
+  </body>
    <!--2 of 2 Columns-->
    <div>
       <h3 class="card-header">Visualizations</h3>
       <div class="card-body">
       <p class="card-text">Population</p>
       </div>
-      <a target="_blank"  href="images/Australiapop.svg">
-      <img style="height: 200px; width: 300px; display: block;" src="Images/Australiapop.svg" alt="Cloudiness">
+      <a target="_blank"  href="images/population_bubble.png">
+      <img style="height: 800px; width: 1000px; display: block;"src="Images/population_bubble.png" alt="Population Layers">
       </a>
 
 
