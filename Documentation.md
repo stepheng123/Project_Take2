@@ -42,6 +42,10 @@ The next map showcases the natural hazards of Australia. Bush fires has been a k
 ## Data Processing
 
 The team used various techniques and tools to storytell about Australia. The sources of data used are stored in a folder named "Data" in Github. In this folder, the following are shared : 
+
+| Data file | Description | 
+|---|---|
+
 - aus_trade : this is an excel file obtained for the Department of Foreign Affairs and Trade. All the data used for economy is provided from this file. 
 - aus_trade.sqlite : this is the sqlite version of the excel file. This is used for the data visualisation. 
 - aus_trade.json : this is the json vesion of the excel file. 
