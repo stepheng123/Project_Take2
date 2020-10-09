@@ -162,7 +162,7 @@ var overlayMaps = {
 // Define a map object
 var myMap = L.map("map", {
   center: [-23.7, 133.87],
-  zoom: 5,
+  zoom: 5.4,
   layers: [streetmap, states, cities]
 });
 
