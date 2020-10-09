@@ -45,12 +45,12 @@ The team used various techniques and tools to storytell about Australia. The sou
 
 | Data file | Description | 
 |---|---|
-|aus_trade | this is an excel file obtained for the Department of Foreign Affairs and Trade. All the data used for economy is provided from this file. |
-| aus_trade.sqlite | this is the sqlite version of the excel file. This is used for the data visualisation| 
-| aus_trade.json | this is the json vesion of the excel file. |
-| distribution  | this is the csv file of the distribution of Australians across the country. This file was scrapped from a wikipedia page.| 
-| ethinicity | this is the csv file of the ethnic make-up of Australians. This file was scrapped from a wikipedia page.| 
-| population | this is the csv file showing the population growth of Australians from 1900. This is also scrapped from a wikipedia page| 
+|aus_trade | This is an excel file obtained for the Department of Foreign Affairs and Trade. All the data used for economy is provided from this file. |
+| aus_trade.sqlite | This is the sqlite version of the excel file. This is used for the data visualisation| 
+| aus_trade.json | This is the json vesion of the excel file. |
+| distribution  | This is the csv file of the distribution of Australians across the country. This file was scrapped from a wikipedia page.| 
+| ethinicity | This is the csv file of the ethnic make-up of Australians. This file was scrapped from a wikipedia page.| 
+| population | This is the csv file showing the population growth of Australians from 1900. This is also scrapped from a wikipedia page| 
 
 For the mapping, the team used leaflet. There are two types of maps being showcased. These are : 
 - Heatmap of bushfire - this is using the chloropleth theme of leaflet.
@@ -68,6 +68,15 @@ For webscraping, the team used pandas built-in capabilities. This tool enabled t
 For the documentation, the team used Markdown to document their journey and details of their webpages. 
 
 
+## Future Work
+
+As this dataset was sourced with the idea that it can be improved and worked in the near future, there are huge amount of potential that can be explored. The following are examples and suggestions for future work : 
+
+| Area of Interest | Description |
+|---|---|
+| Sports | As a nation proud of its sports heritage, there's potential to delve into the history and progress of major Australian sports such as Australian Footy, Cricket and Rugby. |
+| People | As a nation built up on immigration, there's a huge potential to explore and understand the indigenous population of Australia. |
+| Energy | As a country that is rich of minerals, there's a huge potential to understand Australia's natural resources including fossil fuel, wind and solar. |
 
 
 
