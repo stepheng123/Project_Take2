@@ -19,13 +19,13 @@ One of the interesting dataset obtained during the exploration for this project 
 One interesting dataset was the balance of trade between Australia and its trading partners. The team used this historical data from 1987 to 2019 and plotted against a racing bar chart. This visual paints the story of Australia and its strongest top trading partners over time. 
 
 The team then went on to develop further interesting visuals on Australia's economy. One key area is to understand Australia's economy for : 
-  *Top Deficit
-  *Top Surplus
-  *Top Export
-  *Top Import
-  *Top Total
+- Top Deficit
+- Top Surplus
+- Top Export
+- Top Import
+- Top Total
 
-
+Another interesting visual was to show the Australia's trading partners in surplus or deficit using a treemap. The idea of a treemap provides the reader a quick understanding on the axis and size of a foreign country's trade interest with Australia. The largest two trading nations, which are China and the United States of America have high volume trade with Australia at the opposite ends of the spectrum. 
 
 
 ## Australians at a Glance
