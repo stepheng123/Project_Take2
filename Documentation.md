@@ -14,7 +14,7 @@ This main page also sets the expectation of the website visitor to the site.
 ## Australia's Economy at a glance
 One of the key stories we'd like to share is Australia's economy. As a very large island nation, Australia is dependent on solid foreign relationships and trade. The team used various sites to explore the data on Australia's trade. 
 
-One of the interesting dataset obtained during the exploration for this project was from the Department of Trade and Foreign Affairs. From this source, the team obtained a wealth of data about Australia and its trading partners since 1987. 
+One of the interesting dataset obtained during the exploration for this project was from the Department of Trade and Foreign Affairs. From this source, the team obtained a wealth of data about Australia and its trading partners since 1987. This dataset was made available for public use via CSV. The team downloaded this dataset and processed this further. These steps are described further under the section for *Data Processing*. 
 
 One interesting dataset was the balance of trade between Australia and its trading partners. The team used this historical data from 1987 to 2019 and plotted against a racing bar chart. This visual paints the story of Australia and its strongest top trading partners over time. 
 
