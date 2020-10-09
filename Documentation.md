@@ -40,6 +40,31 @@ The final piece of our website relates to the geographical nature of Australia. 
 
 The next map showcases the natural hazards of Australia. Bush fires has been a known calamity in Australia. This is due to climate change, vast swathes of dry bush and expansion of human habitation into the bush. The dataset obtained was a geojson file that earmarked the likelihood of bushfires using heatmaps. 
 
+## Data Processing
+
+The team used various techniques and tools to storytell about Australia. The sources of data used are stored in a folder named "Data" in Github. In this folder, the following are shared : 
+- aus_trade : this is an excel file obtained for the Department of Foreign Affairs and Trade. All the data used for economy is provided from this file. 
+- aus_trade.sqlite : this is the sqlite version of the excel file. This is used for the data visualisation. 
+- aus_trade.json : this is the json vesion of the excel file. 
+- distribution  : this is the csv file of the distribution of Australians across the country. This file was scrapped from a wikipedia page. 
+- ethinicity : this is the csv file of the ethnic make-up of Australians. This file was scrapped from a wikipedia page. 
+- population : this is the csv file showing the population growth of Australians from 1900. This is also scrapped from a wikipedia page. 
+
+For the mapping, the team used leaflet. There are two types of maps being showcased. These are : 
+- Heatmap of bushfire - this is using the chloropleth theme of leaflet.
+- Australia and population - this is a standard display of Australia using customised markers to show the size of the population within each capital city and its state. 
+
+For the bar chart race, the team found an interesting html plugin from flourish studio. This plugin processed the time-based data on Australia's economy. The data was uploaded onto the studio and this produced an embedded file for the html. 
+
+For the website, the team used the standard html to produce the main page. The team also used bootstrap-css to customise the webpages. The team also ensured there is a navigation bar with a dropdown option. 
+
+To display the data into a webpage, the team first transformed the dataset into sqlite files. Then, the team used flask to showcase the data on the economy. 
+
+For webscraping, the team used pandas built-in capabilities. This tool enabled the team to obtain existing datasets from wikipedia to inspect, explore and use. 
+
+
+For the documentation, the team used Markdown to document their journey and details of their webpages. 
+
 
 
 
