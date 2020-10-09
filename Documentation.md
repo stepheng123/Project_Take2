@@ -34,7 +34,13 @@ The next big factor about Australia is its population. The team found a multitud
 
 Using web scraping techniques, the team web scraped the data from relevant wikipedia sites. The team also validated the information against its quoted source. Based on this, the team used jupyter notebook to build up basic charts for visual. The outcome of these visuals are displayed in this section. 
 
-## 
+## The Map of Australia
+
+The final piece of our website relates to the geographical nature of Australia. The team were excited to showcase some interesting maps. The first map shows the population of Australians in each city and state. This gives the reader an idea of the distribution of Australians across the continent. The data that was used here was scraped from Wikipedia. 
+
+The next map showcases the natural hazards of Australia. Bush fires has been a known calamity in Australia. This is due to climate change, vast swathes of dry bush and expansion of human habitation into the bush. The dataset obtained was a geojson file that earmarked the likelihood of bushfires using heatmaps. 
+
+
 
 
 
