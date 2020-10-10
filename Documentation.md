@@ -65,7 +65,7 @@ The team used various techniques and tools to storytell about Australia. The sou
 | population | This is the csv file showing the population growth of Australians from 1900. This is also scrapped from a wikipedia page| 
 
 For the mapping, the team used leaflet. There are two types of maps being showcased. These are : 
-- Heatmap of bushfire - this is using the chloropleth theme of leaflet.
+- Heatmap of bushfire - this is an optional map using the chloropleth theme of leaflet.
 - Australia and population - this is a standard display of Australia using customised markers to show the size of the population within each capital city and its state. 
 
 For the bar chart race, the team found an interesting html plugin from flourish studio. This plugin processed the time-based data on Australia's economy. The data was uploaded onto the studio and this produced an embedded file for the html. 
