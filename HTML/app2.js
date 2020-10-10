@@ -10,47 +10,28 @@ var margin = {
   left: 100
 };
 
-var ctx = document.getElementsById("myChart");
+var ctx = document.getElementById('myChart').getContext('2d');
+console.log(ctx)
 var chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        datasets: [{
-            type: 'line',
-            yAxisID: 'Location',
-            backgroundColor: 'transparent',
-            borderColor: 'rgb(255, 99, 132)',
-            pointBackgroundColor: 'rgb(255, 99, 132)',
-            tension: 0,
-            fill: false
-        }, {
-            yAxisID: 'Resident',
-            backgroundColor: 'rgba(54, 162, 235, 0.5)',
-            borderColor: 'transparent'
-        }]
-    },
-    plugins: [ChartDataSource],
-    options: {
-        scales: {
-            yAxes: [{
-                id: 'Location',
-                gridLines: {
-                    drawOnChartArea: false
-                }
-            }, {
-                id: 'Residents',
-                position: 'right',
-                gridLines: {
-                    drawOnChartArea: false
-                }
-            }]
-        },
-        plugins: {
-            datasource: {
-                url: 'ethnic.csv'
-            }
-        }
+
+  type: 'bar',
+
+  plugins: [ChartDataSource],
+
+  options: {
+
+    daatasource: {
+
+      url: 'ethnic.csv'
+
     }
+
+  }
+
 });
+
+
+
 
 
 // Define dimensions of the chart area
