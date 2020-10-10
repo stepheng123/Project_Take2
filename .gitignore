@@ -135,3 +135,6 @@ dmypy.json
 .idea/vcs.xml
 .idea/workspace.xml
 .idea/codeStyles/codeStyleConfig.xml
+
+#api keys
+config.js
