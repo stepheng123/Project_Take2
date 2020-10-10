@@ -42,8 +42,8 @@ function dataFilter(fval){
 
 
 // ===== Bubble Scatter ==========================================================================================
-const svgHeight = 450;
-const svgWidth = 500;
+const svgHeight = 550;
+const svgWidth = 950;
 const svgMargin = {
     top : 25,
     right : 25,
@@ -142,8 +142,8 @@ function bscatter(DATA){
 // ===============================================================================================================
 
 // ===== Barchart ==========================================================================================
-const svgHeight_Bar = 450;
-const svgWidth_Bar = 500;
+const svgHeight_Bar = 550;
+const svgWidth_Bar = 950;
 const svgMargin_Bar = {
     top : 25,
     right : 25,
@@ -253,8 +253,8 @@ function barchart(DATA, topx){
 // ===============================================================================================================
 
 // ===== Treemap ==========================================================================================
-const svgHeight_TMap = 700;
-const svgWidth_TMap = 900;
+const svgHeight_TMap = 750;
+const svgWidth_TMap = 950;
 const svgMargin_TMap = {
     top : 25,
     right : 25,
@@ -337,8 +337,8 @@ function Treemap(DATA, tradex){
 // ===============================================================================================================
 
 // ===== Line Chart ==========================================================================================
-const svgHeight_Line = 700;
-const svgWidth_Line = 900;
+const svgHeight_Line = 750;
+const svgWidth_Line = 950;
 const svgMargin_Line = {
     top : 25,
     right : 25,
