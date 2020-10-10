@@ -96,6 +96,9 @@ As this dataset was sourced with the idea that it can be improved and worked in 
 The team has a few key lessons learnt from this project. These are described as follows : 
 - The data : The data exploration has always been a challenge for a topic that is very wide and diversed. The team was spoilt for choices, but had to limit its choices due to time constraints. In some instances, the data size was too large to work with. 
 - The charts : The team learnt many different available visualisations. It was exciting to experiment with the different tecnologies. The team did find it challenging to learn and implement new js charts that was done before. However, this can be overcomed in due course. 
+- The documentation : The team found it essential to keep a descriptive account of the project. The better approach is to maintain an updated documentation during the project execution. 
+
+Overall, this challenging project opened up the team to new and exciting possibilities with data. 
 
 
 
