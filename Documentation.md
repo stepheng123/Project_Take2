@@ -10,28 +10,40 @@ This is the introduction page to the project. The objective of the website is to
 
 This main page also sets the expectation of the website visitor to the site. 
 
+## Australians at a Glance
+
+The next big factor about Australia is its population. The team found a multitude of sources describing the demography and population of Australia. The common source that summarized this data was wikipedia. 
+
+Using web scraping techniques, the team web scraped the data from relevant wikipedia sites. The team also validated the information against its quoted source. Based on this, the team used jupyter notebook to build up basic charts for visual. The outcome of these visuals are displayed in this section. 
+
+In this page, the team showcased the distribution of the population in a map. The map of Australia has a layer to show population within the capital of each city and the population in the state. This map shows the most populous and least populous states. It also shows the size of the states for context. 
+
+The line chart at the bottom of the page shows the growth of population since 1900. This increase in population is consistent with world growth and events. 
+
 ## Australia's Economy at a glance
 One of the key stories we'd like to share is Australia's economy. As a very large island nation, Australia is dependent on solid foreign relationships and trade. The team used various sites to explore the data on Australia's trade. 
 
 One of the interesting dataset obtained during the exploration for this project was from the Department of Trade and Foreign Affairs. From this source, the team obtained a wealth of data about Australia and its trading partners since 1987. This dataset was made available for public use via CSV. The team downloaded this dataset and processed this further. These steps are described further under the section for *Data Processing*. 
 
-One interesting dataset was the balance of trade between Australia and its trading partners. The team used this historical data from 1987 to 2019 and plotted against a racing bar chart. This visual paints the story of Australia and its strongest top trading partners over time. 
+The team presented the economy in two parts, an overview and deep dive of Australia's economy per year. The overview insight is displayed in an animated racing bar chart. This interesting dataset shows the balance of trade between Australia and its trading partners. The team used this historical data from 1987 to 2019 and plotted against a racing bar chart. This visual paints the story of Australia and its strongest top trading partners over time. 
 
-The team then went on to develop further interesting visuals on Australia's economy. One key area is to understand Australia's economy for : 
+The detailed analysis of the economy shows Australia's economy from a year-to-year view. The key areas to understand Australia's economy are : 
 - Top Deficit
 - Top Surplus
 - Top Export
 - Top Import
 - Top Total
 
+The team displayed this information in three parts. The bubble chart shows the size of the economies trading with Australia. The second bar chart shows the top 10 nations trading with Australia for the selected year. This can be further described based on the key areas identified above. 
+
 Another interesting visual was to show the Australia's trading partners in surplus or deficit using a treemap. The idea of a treemap provides the reader a quick understanding on the axis and size of a foreign country's trade interest with Australia. The largest two trading nations, which are China and the United States of America have high volume trade with Australia at the opposite ends of the spectrum. 
 
+The final visualisation is to understand each country's relationship with Australia since 1987. The dataset available is limited to 1987  to 2019. This visualisation shows us the following : 
+- The total trade : this shows the total monetary worth of the economic relationship
+- The import    : this shows the import from the selected country to Australia
+- The export    : this shows the export from Australia to the selected country
+- The balance   : this is worth of that relationship to Australia. Where positive, this shows Australia is profiting from this relationship while negative shows Australia has monetary outflows from this relationship
 
-## Australians at a Glance
-
-The next big factor about Australia is its population. The team found a multitude of sources describing the demography and population of Australia. The common source that summarized this data was wikipedia. 
-
-Using web scraping techniques, the team web scraped the data from relevant wikipedia sites. The team also validated the information against its quoted source. Based on this, the team used jupyter notebook to build up basic charts for visual. The outcome of these visuals are displayed in this section. 
 
 ## The Map of Australia
 
@@ -78,6 +90,12 @@ As this dataset was sourced with the idea that it can be improved and worked in 
 | People | As a nation built up on immigration, there's a huge potential to explore and understand the indigenous population of Australia. |
 | Energy | As a country that is rich of minerals, there's a huge potential to understand Australia's natural resources including fossil fuel, wind and solar. |
 
+
+## Lessons Learnt
+
+The team has a few key lessons learnt from this project. These are described as follows : 
+- The data : The data exploration has always been a challenge for a topic that is very wide and diversed. The team was spoilt for choices, but had to limit its choices due to time constraints. In some instances, the data size was too large to work with. 
+- The charts : The team learnt many different available visualisations. It was exciting to experiment with the different tecnologies. The team did find it challenging to learn and implement new js charts that was done before. However, this can be overcomed in due course. 
 
 
 
