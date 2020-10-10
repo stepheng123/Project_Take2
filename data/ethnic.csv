@@ -1,6 +1,6 @@
 Location,Residents
-England[B],986460
-Mainland China[C],677240
+England,986460
+Mainland China,677240
 India,660350
 New Zealand,570000
 Philippines,293770
@@ -9,10 +9,10 @@ South Africa,193860
 Italy,182520
 Malaysia,175920
 Sri Lanka,140260
-Scotland[D],133920
+Scotland,133920
 Nepal,117870
 South Korea,116030
 Germany,112420
 Greece,106660
 United States,108570
-Hong Kong SAR[E],101290
+Hong Kong SAR,101290

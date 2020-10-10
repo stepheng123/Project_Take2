@@ -64,7 +64,7 @@ d3.csv("population.csv").then(function(forceData) {
   chartGroup.append("path")
     // The drawLine function returns the instructions for creating the line for forceData
     .attr("d", drawLine(forceData))
-    .classed("line", true).attr("fill","none").attr("stroke","white");
+    .classed("line", true);
 
   // Append an SVG group element to the chartGroup, create the left axis inside of it
   chartGroup.append("g")
