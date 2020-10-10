@@ -1,0 +1,773 @@
+Index: HTML/economy_charts.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en-us\">\r\n\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>Economy</title>\r\n  <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\r\n  <link rel=\"stylesheet\" href=\"bootstrap.css\">\r\n</head>\r\n<body>\r\n<!--NavBar-->\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\r\n  <a class=\"navbar-brand\" href=\"index.html\">D3.Team Project</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n<!--NavBar collapse-->\r\n<div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n  <ul class=\"navbar-nav mr-auto\">\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" href=\"population.html\">Population</a>\r\n    </li>\r\n    <li class=\"nav-item dropdown\">\r\n      <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Economy</a>\r\n      <div class=\"dropdown-menu\">\r\n        <a class=\"dropdown-item\" href=\"economy_charts.html\">Economy charts</a>\r\n        <a class=\"dropdown-item\" href=\"exports_bar.html\">Export of goods</a>\r\n      </div>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" href=\"data.html\">Data</a>\r\n    </li>\r\n    <li class=\"nav-item dropdown\">\r\n      <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Maps</a>\r\n      <div class=\"dropdown-menu\">\r\n        <a class=\"dropdown-item\" href=\"bubble.html\">Bubble Map</a>\r\n        <a class=\"dropdown-item\" href=\"choropleth.html\">Choropleth Map</a>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n\r\n\r\n<!-- Creates the Overall Grid -->\r\n<div class=\"container\">\r\n  <!-- First Row -->\r\n  <div class=\"row\">\r\n    <!-- First (and only column) -->\r\n    <div class=\"col-md-12\">\r\n      <br><br>\r\n      <h1 class=\"text-center\">Economy: \r\n        <small class=\"text-muted\">of Australia</small>\r\n        </h1>\r\n    </div>\r\n  </div>\r\n  <!--Row-->\r\n  <div class=\"row\">\r\n   <!--1 of 2 Columns-->\r\n   <div class=\"col-md-12\">\r\n    <br><br>\r\n     <p class=\"lead\">The economy of Australia is a highly developed market economy.\r\n       Its GDP was estimated at A$1.89 trillion as of 2019. In 2018 Australia became the country with the largest median wealth per adult.<p>\r\n      <br><br>\r\n      <p class=\"lead\">The Australian economy is dominated by its service sector, comprising 62.7% of the GDP and employing 78.8% of the labour force in 2017.\r\n        East Asia (including ASEAN and Northeast Asia) is a top export destination, accounting for about 64% of exports in 2016. </p>\r\n   </div>\r\n   <!--2 of 2 Columns-->\r\n   <div class=\"col-md-12\">\r\n      <h3 class=\"card-header\">Visualizations</h3>\r\n      <div class=\"card-body\">\r\n      <p class=\"card-text\">Economy</p>\r\n      <a target=\"_blank\"  href=\"images/bubble_chart.png\">\r\n        <img style=\"height: 600px; width: 800px; display: block;\" src=\"Images/bubble_chart.png\" alt=\"\">\r\n      </a>\r\n      <br><br>\r\n      <a target=\"_blank\"  href=\"images/bar_chart.png\">\r\n        <img style=\"height: 600px; width: 800px; display: block;\" src=\"Images/bar_chart.png\" alt=\"\">\r\n      </a>\r\n      <br><br>\r\n      <a target=\"_blank\"  href=\"images/square_chart.png\">\r\n        <img style=\"height: 600px; width: 800px; display: block;\" src=\"Images/square_chart.png\" alt=\"\">\r\n      </a>\r\n    </div>\r\n\r\n\r\n<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\r\n\r\n</body>\r\n\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- HTML/economy_charts.html	(revision ed53489ad57af68d49f33827943b7940a73e1da2)
++++ HTML/economy_charts.html	(date 1602296570091)
+@@ -6,6 +6,10 @@
+   <title>Economy</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="bootstrap.css">
++    <!--link rel="stylesheet" href="css/style.css"-->
++    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
++    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
++    <script src="https://d3js.org/d3.v5.min.js"></script>
+ </head>
+ <body>
+ <!--NavBar-->
+@@ -69,17 +73,22 @@
+       <h3 class="card-header">Visualizations</h3>
+       <div class="card-body">
+       <p class="card-text">Economy</p>
+-      <a target="_blank"  href="images/bubble_chart.png">
+-        <img style="height: 600px; width: 800px; display: block;" src="Images/bubble_chart.png" alt="">
+-      </a>
+-      <br><br>
+-      <a target="_blank"  href="images/bar_chart.png">
+-        <img style="height: 600px; width: 800px; display: block;" src="Images/bar_chart.png" alt="">
+-      </a>
+-      <br><br>
+-      <a target="_blank"  href="images/square_chart.png">
+-        <img style="height: 600px; width: 800px; display: block;" src="Images/square_chart.png" alt="">
+-      </a>
++          <div id="bscatter">
++              <div><select id="selDataset" onchange="optionChanged(this.value)"></select></div>
++          </div>
++          <div style="white-space: nowrap">
++              <nobr><div onclick="barchart(DATA,0);Treemap(DATA,0)"><a>Top Deficit</a></div>
++                  <div onclick="barchart(DATA,1);Treemap(DATA,1)">Top Surplus</div>
++                  <div onclick="barchart(DATA,2);Treemap(DATA,2)">Top Export</div>
++                  <div onclick="barchart(DATA,3);Treemap(DATA,3)">Top Import</div>
++                  <div onclick="barchart(DATA,4);Treemap(DATA,4)">Top Total</div></nobr>
++              <div id="barchartx"></div>
++          </div>
++          <div id="treemapx"></div>
++          <div id="linechartx">
++              <div><select id="selCountry" onchange="countryChanged(this.value)"></select></div>
++          </div>
++          <script type="text/javascript" src="js/app.js"></script>
+     </div>
+ 
+ 
+Index: Web/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html>\r\n    <head>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\r\n        <meta charset=\"UTF-8\">\r\n        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\r\n        <meta name=\"author\" content=\"TheKOM\">\r\n        <meta name=\"description\" content=\"description here\">\r\n        <meta name=\"keywords\" content=\"keywords,are ,here\">\r\n        <!--link rel=\"shortcut icon\" href=\"img/favicon.ico\" type=\"image/vnd.microsoft.icon\"-->\r\n        <link rel=\"stylesheet\" href=\"css/style.css\">\r\n        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\r\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js\" integrity=\"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49\" crossorigin=\"anonymous\"></script>\r\n        <script src=\"https://d3js.org/d3.v5.min.js\"></script>\r\n        <title>title</title>\r\n    </head>\r\n    <body>\r\n        <head>\r\n            \r\n        </head>\r\n        <main>\r\n            <div id=\"bscatter\">\r\n                <div><select id=\"selDataset\" onchange=\"optionChanged(this.value)\"></select></div>\r\n            </div>\r\n            <div>\r\n                <div onclick=\"barchart(DATA,0);Treemap(DATA,0)\"><a>Top Deficit</a></div>\r\n                <div onclick=\"barchart(DATA,1);Treemap(DATA,1)\">Top Surplus</div>\r\n                <div onclick=\"barchart(DATA,2);Treemap(DATA,2)\">Top Export</div>\r\n                <div onclick=\"barchart(DATA,3);Treemap(DATA,3)\">Top Import</div>\r\n                <div onclick=\"barchart(DATA,4);Treemap(DATA,4)\">Top Total</div>\r\n                <div id=\"barchartx\"></div>\r\n            </div>\r\n            <div id=\"treemapx\"></div>\r\n            <div id=\"linechartx\">\r\n                <div><select id=\"selCountry\" onchange=\"countryChanged(this.value)\"></select></div>\r\n            </div>\r\n            <script type=\"text/javascript\" src=\"js/app.js\"></script>\r\n        </main>\r\n        <footer>\r\n            \r\n        </footer>\r\n    </body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Web/index.html	(revision ed53489ad57af68d49f33827943b7940a73e1da2)
++++ Web/index.html	(date 1602294479760)
+@@ -22,12 +22,12 @@
+             <div id="bscatter">
+                 <div><select id="selDataset" onchange="optionChanged(this.value)"></select></div>
+             </div>
+-            <div>
+-                <div onclick="barchart(DATA,0);Treemap(DATA,0)"><a>Top Deficit</a></div>
++            <div style="white-space: nowrap">
++                <nobr><div onclick="barchart(DATA,0);Treemap(DATA,0)"><a>Top Deficit</a></div>
+                 <div onclick="barchart(DATA,1);Treemap(DATA,1)">Top Surplus</div>
+                 <div onclick="barchart(DATA,2);Treemap(DATA,2)">Top Export</div>
+                 <div onclick="barchart(DATA,3);Treemap(DATA,3)">Top Import</div>
+-                <div onclick="barchart(DATA,4);Treemap(DATA,4)">Top Total</div>
++                <div onclick="barchart(DATA,4);Treemap(DATA,4)">Top Total</div></nobr>
+                 <div id="barchartx"></div>
+             </div>
+             <div id="treemapx"></div>
+Index: Web/js/app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var orgData;\r\nvar cDATA;\r\nvar DATA;\r\n\r\nfunction init(data){\r\n    let dYear = [];\r\n    for(let i=0; i<data.length; i++){\r\n        dYear.push(data[i].Year)\r\n    }\r\n    dYear.sort().reverse();\r\n    const seld = d3Select.select('#selDataset');\r\n    dYear.forEach(d=>{\r\n        seld.append('option')\r\n            .attr('value', d)\r\n            .text(d);\r\n    })\r\n\r\n    let dCountry =[];\r\n    const tempTrade = orgData[0].Trade;\r\n    for(let i=0; i<tempTrade.length; i++){\r\n        dCountry.push(tempTrade[i].Country)\r\n    }\r\n    console.log(dCountry);\r\n    dCountry.sort();\r\n    const selc = d3Select_Line.select('#selCountry');\r\n    dCountry.forEach(d=>{\r\n        selc.append('option')\r\n            .attr('value', d)\r\n            .text(d)\r\n    })\r\n\r\n    optionChanged(seld.node().value);\r\n    countryChanged(selc.node().value)\r\n}\r\n\r\nfunction dataFilter(fval){\r\n    let fData = orgData.filter(d=>d.Year == Number(fval))[0]['Trade'];\r\n    fData = fData.filter(d=>!(d.Export==0 && d.Import==0))\r\n\r\n    return fData\r\n}\r\n\r\n// ===== Bubble Scatter ==========================================================================================\r\nconst svgHeight = 450;\r\nconst svgWidth = 500;\r\nconst svgMargin = {\r\n    top : 25,\r\n    right : 25,\r\n    bottom : 75,\r\n    left : 75\r\n}\r\nconst width = svgWidth - svgMargin.left - svgMargin.right;\r\nconst height = svgHeight - svgMargin.top - svgMargin.bottom;\r\n\r\nconst d3Select = d3.select('#bscatter');\r\nconst svg = d3Select.append('svg')\r\n    .attr('height', svgHeight)\r\n    .attr('width', svgWidth);\r\nvar chartGroup = svg.append('g').attr('transform', `translate(${svgMargin.left}, ${svgMargin.top})`);\r\n\r\nvar xLinearScale = d3.scaleLinear().range([0, width]);\r\nvar yLinearScale = d3.scaleLinear().range([height, 0]);\r\nvar zLinearScale = d3.scaleLinear().range([1, 25]);\r\nvar colorScaleOrdinal = d3.scaleOrdinal().range(['red', 'black', 'green']).domain([-1, 0, 1]);\r\n\r\nvar gButtomAxis = chartGroup.append('g').attr('transform', `translate(0,${height})`);\r\nvar gLeftAxis = chartGroup.append('g');\r\n\r\nconst tooltip = d3Select.append(\"use\")\r\n    .attr(\"class\", \"tooltip\")\r\n    .style(\"position\", \"absolute\")\r\n    .style(\"opacity\", 0)\r\n    .style(\"background-color\", \"black\")\r\n    .style(\"border-radius\", \"5px\")\r\n    .style(\"padding\", \"10px\")\r\n    .style(\"color\", \"white\");\r\n\r\nfunction showTooltip(d) {\r\n    tooltip\r\n        .style(\"top\", `${d3.mouse(this)[1]}px`)\r\n        .style(\"left\", `${d3.mouse(this)[0]}px`)\r\n        .style(\"opacity\", 0.5)\r\n        .html(`Country : ${d.Country}<br>Balance : ${d.Balance.toFixed(2)}mil<br>Export : ${d.Export.toFixed(2)}mil<br>Import : ${d.Import.toFixed(2)}mil<br>Total : ${d.Total.toFixed(2)}mil`)\r\n        .on('click', hideTooltip)\r\n\r\n}\r\n\r\nfunction hideTooltip(d) {\r\n    tooltip\r\n        .transition()\r\n        .duration(200)\r\n        .style(\"opacity\", 0)\r\n}\r\n\r\nfunction moveTooltip(d) {\r\n    tooltip\r\n        .style(\"left\", (d3.mouse(this)[0]+30) + \"px\")\r\n        .style(\"top\", (d3.mouse(this)[1]+30) + \"px\")\r\n}\r\n\r\nfunction bscatter(DATA){\r\n\r\n    xLinearScale.domain([-2000, d3.max(DATA, d=>d.Export)]);\r\n    yLinearScale.domain([-2000, d3.max(DATA, d=>d.Import)]);\r\n    zLinearScale.domain([d3.min(DATA, d=>d.Balance), d3.max(DATA, d=>d.Balance)]);\r\n\r\n    gButtomAxis.call(d3.axisBottom(xLinearScale));\r\n    gLeftAxis.call(d3.axisLeft(yLinearScale));\r\n\r\n    var gCircle = chartGroup.selectAll(\"circle\").data(DATA)\r\n    gCircle\r\n        .enter()\r\n        .append(\"circle\")\r\n        .merge(gCircle)\r\n        .attr(\"cx\", d => xLinearScale(d.Export))\r\n        .attr(\"cy\", d => yLinearScale(d.Import))\r\n        .attr(\"r\", d => zLinearScale(d.Total))\r\n        .attr(\"fill\", d => colorScaleOrdinal((d.Balance>0)?1:(d.Balance<0)?-1:0))\r\n        .attr(\"opacity\", \"0.3\")\r\n        .attr(\"stroke\", \"black\")\r\n        .on(\"click\", showTooltip)\r\n        // .on(\"mouseleave\", hideTooltip )\r\n        // .on(\"mousemove\", moveTooltip )\r\n    gCircle.exit().remove()\r\n}\r\n// ===============================================================================================================\r\n\r\n// ===== Barchart ==========================================================================================\r\nconst svgHeight_Bar = 450;\r\nconst svgWidth_Bar = 500;\r\nconst svgMargin_Bar = {\r\n    top : 25,\r\n    right : 25,\r\n    bottom : 75,\r\n    left : 75\r\n}\r\nconst width_Bar = svgWidth_Bar - svgMargin_Bar.left - svgMargin_Bar.right;\r\nconst height_Bar = svgHeight_Bar - svgMargin_Bar.top - svgMargin_Bar.bottom;\r\n\r\nconst d3Select_Bar = d3.select('#barchartx');\r\nconst svg_Bar = d3Select_Bar.append('svg')\r\n    .attr('height', svgHeight_Bar)\r\n    .attr('width', svgWidth_Bar);\r\nvar chartGroup_Bar = svg_Bar.append('g').attr('transform', `translate(${svgMargin_Bar.left}, ${svgMargin_Bar.top})`);\r\n\r\nvar xLinearScale_Bar = d3.scaleBand()\r\n                        .range([0, width_Bar])\r\n                        .padding(0.2);\r\nvar yLinearScale_Bar = d3.scaleLinear()\r\n                        .range([height_Bar, 0]);\r\nvar gButtomAxis_Bar = chartGroup_Bar.append('g')\r\n                                    .attr(\"transform\", `translate(0, ${height_Bar})`);\r\nvar gLeftAxis_Bar = chartGroup_Bar.append('g');\r\n\r\n\r\nfunction barchart(DATA, topx){\r\n    const topSlice = 10;\r\n    let topDATA = [];\r\n    let col = '';\r\n    // console.log('DATA');\r\n    switch (topx){\r\n        case 0: // Top Deficit\r\n            let temp = DATA.sort((a, b) => a.Balance - b.Balance).slice(0,topSlice);\r\n            for(let i=0; i<temp.length; i++){\r\n                topDATA.push(Object.assign({}, temp[i]))\r\n            }\r\n            for(let i=0; i<topDATA.length; i++){\r\n                topDATA[i].Balance *= -1\r\n            }\r\n            col = 'Balance';\r\n            break\r\n        case 1: // Top Surplus\r\n            topDATA = DATA.sort((a, b) => b.Balance - a.Balance).slice(0,topSlice);\r\n            col = 'Balance';\r\n            break\r\n        case 2: // Top Export\r\n            topDATA = DATA.sort((a, b) => b.Export - a.Export).slice(0,topSlice);\r\n            col = 'Export';\r\n            break\r\n        case 3: // Top Import\r\n            topDATA = DATA.sort((a, b) => b.Import - a.Import).slice(0,topSlice);\r\n            col = 'Import';\r\n            break\r\n        default: // Top Total\r\n            topDATA= DATA.sort((a, b) => b.Total - a.Total).slice(0,topSlice);\r\n            col = 'Total'\r\n    }\r\n\r\n    xLinearScale_Bar.domain(topDATA.map(d=>d.Country));\r\n    yLinearScale_Bar.domain([d3.min(topDATA, d=>d[col]), d3.max(topDATA, d=>d[col])]);\r\n\r\n    gButtomAxis_Bar.call(d3.axisBottom(xLinearScale_Bar))\r\n                    .selectAll(\"text\")\r\n                    .attr(\"transform\", \"translate(-10,0)rotate(-45)\")\r\n                    .style(\"text-anchor\", \"end\");\r\n    gLeftAxis_Bar.call(d3.axisLeft(yLinearScale_Bar));\r\n\r\n    var gBar = chartGroup_Bar.selectAll(\"rect\").data(topDATA)\r\n    gBar\r\n        .enter()\r\n        .append(\"rect\")\r\n        .merge(gBar)\r\n        .transition().duration(1000)\r\n        .attr(\"x\", d => xLinearScale_Bar(d.Country))\r\n        .attr(\"y\", d => yLinearScale_Bar(d[col]))\r\n        .attr(\"width\", xLinearScale_Bar.bandwidth())\r\n        .attr(\"height\", d=>height_Bar-yLinearScale_Bar(d[col]))\r\n        .attr(\"fill\", \"pink\")\r\n    gBar.exit().remove()\r\n}\r\n// ===============================================================================================================\r\n\r\n// ===== Treemap ==========================================================================================\r\nconst svgHeight_TMap = 700;\r\nconst svgWidth_TMap = 900;\r\nconst svgMargin_TMap = {\r\n    top : 25,\r\n    right : 25,\r\n    bottom : 75,\r\n    left : 75\r\n}\r\nconst width_TMap = svgWidth_TMap - svgMargin_TMap.left - svgMargin_TMap.right;\r\nconst height_TMap = svgHeight_TMap - svgMargin_TMap.top - svgMargin_TMap.bottom;\r\n\r\nconst d3Select_TMap = d3.select('#treemapx');\r\nconst svg_TMap = d3Select_TMap.append('svg')\r\n    .attr('height', svgHeight_TMap)\r\n    .attr('width', svgWidth_TMap);\r\nvar chartGroup_TMap = svg_TMap.append('g').attr('transform', `translate(${svgMargin_TMap.left}, ${svgMargin_TMap.top})`);\r\n\r\n\r\nfunction Treemap(DATA, tradex){\r\n    const tradeX = ['Balance', 'Balance', 'Export', 'Import', 'Total'];\r\n    let arrSurplus = [];\r\n    let arrDeficit = [];\r\n    for(let i=0; i<DATA.length; i++){\r\n        let dt = Object.assign({}, DATA[i]);\r\n        dt[\"colname\"] = \"level3\";\r\n        if(dt.Balance < 0){\r\n            dt.Balance *= -1;\r\n            arrDeficit.push(dt)\r\n        }else{\r\n            arrSurplus.push(dt)\r\n        }\r\n    }\r\n    let newDATA = {'children':[{'colname':'level2', 'name':'Surplus', 'children':arrSurplus}, {'colname':'level2', 'name':'Deficit', 'children':arrDeficit}]};\r\n\r\n    const root = d3.hierarchy(newDATA).sum(d=>d[tradeX[tradex]]);\r\n\r\n    d3.treemap().size([width_TMap, height_TMap]).paddingInner(4)(root);\r\n\r\n    const color = d3.scaleOrdinal()\r\n        .domain(['Deficit', 'Surplus'])\r\n        .range(['red', 'green']);\r\n\r\n    var gTMap1 = chartGroup_TMap.selectAll('rect').data(root.leaves())\r\n    gTMap1\r\n        .enter()\r\n        .append('rect')\r\n        .merge(gTMap1)\r\n        .attr('x', d=>d.x0)\r\n        .attr('y', d=>d.y0)\r\n        .attr('width', d=>d.x1-d.x0)\r\n        .attr('height', d=>d.y1-d.y0)\r\n        .style('stroke', 'black')\r\n        .style('fill', d=>(tradeX[tradex]=='Balance')?color(d.parent.data.name):'blue');\r\n\r\n    gTMap1.exit().remove()\r\n\r\n    var gTMap2 = chartGroup_TMap.selectAll('text').data(root.leaves())\r\n    gTMap2\r\n        .enter()\r\n        .append('text')\r\n        .merge(gTMap2)\r\n        .text(d=>d.data.Country)\r\n        .attr('x', d=>d.x0+7)\r\n        .attr('y',d=>d.y0+20)\r\n        .attr('font-size', '15px')\r\n        .attr('fill', 'white');\r\n    gTMap2.exit().remove()\r\n\r\n    var gTMap3 = chartGroup_TMap.selectAll('trades').data(root.leaves())\r\n    gTMap3\r\n        .enter()\r\n        .append('text')\r\n        .merge(gTMap3)\r\n        .text(d=>d.data.Total)\r\n        .attr('x', d=>d.x0+7)\r\n        .attr('y',d=>d.y0+35)\r\n        .attr('font-size', '10px')\r\n        .attr('fill', 'white');\r\n    gTMap3.exit().remove()\r\n\r\n}\r\n// ===============================================================================================================\r\n\r\n// ===== Line Chart ==========================================================================================\r\nconst svgHeight_Line = 700;\r\nconst svgWidth_Line = 900;\r\nconst svgMargin_Line = {\r\n    top : 25,\r\n    right : 25,\r\n    bottom : 75,\r\n    left : 75\r\n}\r\nconst width_Line = svgWidth_Line - svgMargin_Line.left - svgMargin_Line.right;\r\nconst height_Line = svgHeight_Line - svgMargin_Line.top - svgMargin_Line.bottom;\r\n\r\nconst d3Select_Line = d3.select('#linechartx');\r\nconst svg_Line = d3Select_Line.append('svg')\r\n    .attr('height', svgHeight_Line)\r\n    .attr('width', svgWidth_Line);\r\nvar chartGroup_Line = svg_Line.append('g').attr('transform', `translate(${svgMargin_Line.left}, ${svgMargin_Line.top})`);\r\n\r\nvar xLinearScale_Line = d3.scaleLinear().range([0, width_Line]);\r\nvar yLinearScale_Line = d3.scaleLinear().range([height_Line, 0]);\r\n\r\nvar gButtomAxis_Line = chartGroup_Line.append('g').attr('transform', `translate(0,${height_Line})`);\r\nvar gLeftAxis_Line = chartGroup_Line.append('g');\r\n\r\n\r\n\r\nvar lineExp = chartGroup_Line\r\n    .append('g')\r\n    .append(\"path\")\r\nvar lineImp = chartGroup_Line\r\n    .append('g')\r\n    .append(\"path\")\r\nvar lineBal = chartGroup_Line\r\n    .append('g')\r\n    .append(\"path\")\r\nvar lineTot = chartGroup_Line\r\n    .append('g')\r\n    .append(\"path\")\r\n\r\n\r\nfunction LineChart(DATA, tradex){\r\n\r\n    xLinearScale_Line.domain([d3.min(DATA, d=>d.Year), d3.max(DATA, d=>d.Year)]);\r\n    yLinearScale_Line.domain([d3.min(DATA, d=>d.Trade.Balance), d3.max(DATA, d=>d.Trade.Total)]);\r\n    gButtomAxis_Line.call(d3.axisBottom(xLinearScale_Line));\r\n    gLeftAxis_Line.call(d3.axisLeft(yLinearScale_Line));\r\n    let expDATA = [];\r\n    let impDATA = [];\r\n    let balDATA = [];\r\n    let totDATA = [];\r\n    for(let i=0; i<DATA.length; i++){\r\n        expDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Export})\r\n        impDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Import})\r\n        balDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Balance})\r\n        totDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Total})\r\n    }\r\n    lineExp\r\n        .datum(expDATA)\r\n        .transition()\r\n        .duration(1000)\r\n        .attr(\"d\", d3.line()\r\n            .x(function(d) { return xLinearScale_Line(+d.time) })\r\n            .y(function(d) { return yLinearScale_Line(+d.value) })\r\n        )\r\n        .attr(\"stroke\", 'red')\r\n        .attr(\"stroke-width\", 4)\r\n        .attr('fill', 'none')\r\n    lineImp\r\n        .datum(impDATA)\r\n        .transition()\r\n        .duration(1000)\r\n        .attr(\"d\", d3.line()\r\n            .x(function(d) { return xLinearScale_Line(+d.time) })\r\n            .y(function(d) { return yLinearScale_Line(+d.value) })\r\n        )\r\n        .attr(\"stroke\", 'green')\r\n        .attr(\"stroke-width\", 4)\r\n        .attr('fill', 'none')\r\n    lineBal\r\n        .datum(balDATA)\r\n        .transition()\r\n        .duration(1000)\r\n        .attr(\"d\", d3.line()\r\n            .x(function(d) { return xLinearScale_Line(+d.time) })\r\n            .y(function(d) { return yLinearScale_Line(+d.value) })\r\n        )\r\n        .attr(\"stroke\", 'blue')\r\n        .attr(\"stroke-width\", 4)\r\n        .attr('fill', 'none')\r\n    lineTot\r\n        .datum(totDATA)\r\n        .transition()\r\n        .duration(1000)\r\n        .attr(\"d\", d3.line()\r\n            .x(function(d) { return xLinearScale_Line(+d.time) })\r\n            .y(function(d) { return yLinearScale_Line(+d.value) })\r\n        )\r\n        .attr(\"stroke\", 'yellow')\r\n        .attr(\"stroke-width\", 4)\r\n        .attr('fill', 'none')\r\n}\r\n// ===============================================================================================================\r\n\r\n\r\nfunction optionChanged(svalue){\r\n    DATA = dataFilter(svalue);\r\n    bscatter(DATA);\r\n    barchart(DATA,0);\r\n    Treemap(DATA,0)\r\n}\r\n\r\nfunction countryChanged(svalue){\r\n    const tempData = orgData;\r\n    cDATA = [];\r\n    for(let i=0; i<tempData.length; i++){\r\n        cDATA.push({'Year':tempData[i].Year, 'Trade':tempData[i].Trade.find(({Country})=>Country==svalue)})\r\n    }\r\n    for(let i=0; i<cDATA.length; i++){\r\n        delete cDATA[i].Trade.Country\r\n    }\r\n    LineChart(cDATA, 0)\r\n}\r\n\r\n\r\nd3.json('../data/aus_trade.json').then(data =>{\r\n    orgData = data;\r\n    init(orgData)\r\n})
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Web/js/app.js	(revision ed53489ad57af68d49f33827943b7940a73e1da2)
++++ Web/js/app.js	(date 1602296518545)
+@@ -40,6 +40,7 @@
+     return fData
+ }
+ 
++
+ // ===== Bubble Scatter ==========================================================================================
+ const svgHeight = 450;
+ const svgWidth = 500;
+@@ -75,6 +76,21 @@
+     .style("padding", "10px")
+     .style("color", "white");
+ 
++chartGroup.append("text")
++    .attr("x", (width / 2))
++    .attr("y", height+50)
++    .attr("text-anchor", "middle")
++    .style("font-size", "16px")
++    .text("Export (Million Au$)");
++
++// chartGroup.append("text")
++//     .attr("x", svgMargin.left-250)
++//     .attr("y", 1)
++//     .attr("text-anchor", "middle")
++//     .attr('transform', `rotate(-90)`)
++//     .style("font-size", "16px")
++//     .text("Import (Million Au$)");
++
+ function showTooltip(d) {
+     tooltip
+         .style("top", `${d3.mouse(this)[1]}px`)
+@@ -152,12 +168,38 @@
+                                     .attr("transform", `translate(0, ${height_Bar})`);
+ var gLeftAxis_Bar = chartGroup_Bar.append('g');
+ 
++// const key_Bar = ['Top Deficit', 'Top Surplus', 'Top Export', 'Top Import', 'Top Total'];
++// chartGroup_Bar.selectAll("mylabels")
++//     .data(key_Bar)
++//     .enter()
++//     .append("text")
++//     .attr("x", 45)
++//     .attr("y", (d,i)=>35 + i*25)
++//     .attr('opacity', 0.5)
++//     .style("fill", d=>color(d))
++//     .text(d=>d)
++//     .attr("text-anchor", "left")
++//     .style("alignment-baseline", "middle")
++
++chartGroup_Bar.append("text")
++    .attr("x", (width_Bar / 2))
++    .attr("y", height_Bar+50)
++    .attr("text-anchor", "middle")
++    .style("font-size", "16px")
++    .text("Export (Country Trade Partner)");
++
++// chartGroup_Bar.append("text")
++//     .attr("x", svgMargin.left-250)
++//     .attr("y", 0)
++//     .attr("text-anchor", "middle")
++//     .attr('transform', `rotate(-90)`)
++//     .style("font-size", "16px")
++//     .text("Import (Million Au$)");
+ 
+ function barchart(DATA, topx){
+     const topSlice = 10;
+     let topDATA = [];
+     let col = '';
+-    // console.log('DATA');
+     switch (topx){
+         case 0: // Top Deficit
+             let temp = DATA.sort((a, b) => a.Balance - b.Balance).slice(0,topSlice);
+@@ -205,7 +247,7 @@
+         .attr("y", d => yLinearScale_Bar(d[col]))
+         .attr("width", xLinearScale_Bar.bandwidth())
+         .attr("height", d=>height_Bar-yLinearScale_Bar(d[col]))
+-        .attr("fill", "pink")
++        .attr("fill", "orange")
+     gBar.exit().remove()
+ }
+ // ===============================================================================================================
+@@ -319,6 +361,48 @@
+ var gLeftAxis_Line = chartGroup_Line.append('g');
+ 
+ 
++var keys = ["Export", "Import", "Balance", "Total"];
++
++var color = d3.scaleOrdinal()
++    .domain(keys)
++    .range(['red', 'green', 'blue', 'orange']);
++
++chartGroup_Line.selectAll("mydots")
++    .data(keys)
++    .enter()
++    .append("circle")
++    .attr("cx", 35)
++    .attr("cy", function(d,i){ return 35 + i*25})
++    .attr("r", 7)
++    .style("fill", function(d){ return color(d)})
++
++
++chartGroup_Line.selectAll("mylabels")
++    .data(keys)
++    .enter()
++    .append("text")
++    .attr("x", 45)
++    .attr("y", (d,i)=>35 + i*25)
++    .attr('opacity', 0.5)
++    .style("fill", d=>color(d))
++    .text(d=>d)
++    .attr("text-anchor", "left")
++    .style("alignment-baseline", "middle")
++
++chartGroup_Line.append("text")
++    .attr("x", (width_Line / 2))
++    .attr("y", height_Line+50)
++    .attr("text-anchor", "middle")
++    .style("font-size", "16px")
++    .text("Year");
++
++// chartGroup_Line.append("text")
++//     .attr("x", svgMargin.left-250)
++//     .attr("y", 0)
++//     .attr("text-anchor", "middle")
++//     .attr('transform', `rotate(-90)`)
++//     .style("font-size", "16px")
++//     .text("Import (Million Au$)");
+ 
+ var lineExp = chartGroup_Line
+     .append('g')
+@@ -361,6 +445,7 @@
+         .attr("stroke", 'red')
+         .attr("stroke-width", 4)
+         .attr('fill', 'none')
++        .attr('stroke-opacity', 0.5)
+     lineImp
+         .datum(impDATA)
+         .transition()
+@@ -372,6 +457,7 @@
+         .attr("stroke", 'green')
+         .attr("stroke-width", 4)
+         .attr('fill', 'none')
++        .attr('stroke-opacity', 0.5)
+     lineBal
+         .datum(balDATA)
+         .transition()
+@@ -383,6 +469,7 @@
+         .attr("stroke", 'blue')
+         .attr("stroke-width", 4)
+         .attr('fill', 'none')
++        .attr('stroke-opacity', 0.5)
+     lineTot
+         .datum(totDATA)
+         .transition()
+@@ -391,9 +478,10 @@
+             .x(function(d) { return xLinearScale_Line(+d.time) })
+             .y(function(d) { return yLinearScale_Line(+d.value) })
+         )
+-        .attr("stroke", 'yellow')
++        .attr("stroke", 'orange')
+         .attr("stroke-width", 4)
+         .attr('fill', 'none')
++        .attr('stroke-opacity', 0.5)
+ }
+ // ===============================================================================================================
+ 
+Index: HTML/js/app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- HTML/js/app.js	(date 1602296656219)
++++ HTML/js/app.js	(date 1602296656219)
+@@ -0,0 +1,512 @@
++var orgData;
++var cDATA;
++var DATA;
++
++function init(data){
++    let dYear = [];
++    for(let i=0; i<data.length; i++){
++        dYear.push(data[i].Year)
++    }
++    dYear.sort().reverse();
++    const seld = d3Select.select('#selDataset');
++    dYear.forEach(d=>{
++        seld.append('option')
++            .attr('value', d)
++            .text(d);
++    })
++
++    let dCountry =[];
++    const tempTrade = orgData[0].Trade;
++    for(let i=0; i<tempTrade.length; i++){
++        dCountry.push(tempTrade[i].Country)
++    }
++    console.log(dCountry);
++    dCountry.sort();
++    const selc = d3Select_Line.select('#selCountry');
++    dCountry.forEach(d=>{
++        selc.append('option')
++            .attr('value', d)
++            .text(d)
++    })
++
++    optionChanged(seld.node().value);
++    countryChanged(selc.node().value)
++}
++
++function dataFilter(fval){
++    let fData = orgData.filter(d=>d.Year == Number(fval))[0]['Trade'];
++    fData = fData.filter(d=>!(d.Export==0 && d.Import==0))
++
++    return fData
++}
++
++
++// ===== Bubble Scatter ==========================================================================================
++const svgHeight = 450;
++const svgWidth = 500;
++const svgMargin = {
++    top : 25,
++    right : 25,
++    bottom : 75,
++    left : 75
++}
++const width = svgWidth - svgMargin.left - svgMargin.right;
++const height = svgHeight - svgMargin.top - svgMargin.bottom;
++
++const d3Select = d3.select('#bscatter');
++const svg = d3Select.append('svg')
++    .attr('height', svgHeight)
++    .attr('width', svgWidth);
++var chartGroup = svg.append('g').attr('transform', `translate(${svgMargin.left}, ${svgMargin.top})`);
++
++var xLinearScale = d3.scaleLinear().range([0, width]);
++var yLinearScale = d3.scaleLinear().range([height, 0]);
++var zLinearScale = d3.scaleLinear().range([1, 25]);
++var colorScaleOrdinal = d3.scaleOrdinal().range(['red', 'black', 'green']).domain([-1, 0, 1]);
++
++var gButtomAxis = chartGroup.append('g').attr('transform', `translate(0,${height})`);
++var gLeftAxis = chartGroup.append('g');
++
++const tooltip = d3Select.append("use")
++    .attr("class", "tooltip")
++    .style("position", "absolute")
++    .style("opacity", 0)
++    .style("background-color", "black")
++    .style("border-radius", "5px")
++    .style("padding", "10px")
++    .style("color", "white");
++
++chartGroup.append("text")
++    .attr("x", (width / 2))
++    .attr("y", height+50)
++    .attr("text-anchor", "middle")
++    .style("font-size", "16px")
++    .text("Export (Million Au$)");
++
++// chartGroup.append("text")
++//     .attr("x", svgMargin.left-250)
++//     .attr("y", 1)
++//     .attr("text-anchor", "middle")
++//     .attr('transform', `rotate(-90)`)
++//     .style("font-size", "16px")
++//     .text("Import (Million Au$)");
++
++function showTooltip(d) {
++    tooltip
++        .style("top", `${d3.mouse(this)[1]}px`)
++        .style("left", `${d3.mouse(this)[0]}px`)
++        .style("opacity", 0.5)
++        .html(`Country : ${d.Country}<br>Balance : ${d.Balance.toFixed(2)}mil<br>Export : ${d.Export.toFixed(2)}mil<br>Import : ${d.Import.toFixed(2)}mil<br>Total : ${d.Total.toFixed(2)}mil`)
++        .on('click', hideTooltip)
++
++}
++
++function hideTooltip(d) {
++    tooltip
++        .transition()
++        .duration(200)
++        .style("opacity", 0)
++}
++
++function moveTooltip(d) {
++    tooltip
++        .style("left", (d3.mouse(this)[0]+30) + "px")
++        .style("top", (d3.mouse(this)[1]+30) + "px")
++}
++
++function bscatter(DATA){
++
++    xLinearScale.domain([-2000, d3.max(DATA, d=>d.Export)]);
++    yLinearScale.domain([-2000, d3.max(DATA, d=>d.Import)]);
++    zLinearScale.domain([d3.min(DATA, d=>d.Balance), d3.max(DATA, d=>d.Balance)]);
++
++    gButtomAxis.call(d3.axisBottom(xLinearScale));
++    gLeftAxis.call(d3.axisLeft(yLinearScale));
++
++    var gCircle = chartGroup.selectAll("circle").data(DATA)
++    gCircle
++        .enter()
++        .append("circle")
++        .merge(gCircle)
++        .attr("cx", d => xLinearScale(d.Export))
++        .attr("cy", d => yLinearScale(d.Import))
++        .attr("r", d => zLinearScale(d.Total))
++        .attr("fill", d => colorScaleOrdinal((d.Balance>0)?1:(d.Balance<0)?-1:0))
++        .attr("opacity", "0.3")
++        .attr("stroke", "black")
++        .on("click", showTooltip)
++        // .on("mouseleave", hideTooltip )
++        // .on("mousemove", moveTooltip )
++    gCircle.exit().remove()
++}
++// ===============================================================================================================
++
++// ===== Barchart ==========================================================================================
++const svgHeight_Bar = 450;
++const svgWidth_Bar = 500;
++const svgMargin_Bar = {
++    top : 25,
++    right : 25,
++    bottom : 75,
++    left : 75
++}
++const width_Bar = svgWidth_Bar - svgMargin_Bar.left - svgMargin_Bar.right;
++const height_Bar = svgHeight_Bar - svgMargin_Bar.top - svgMargin_Bar.bottom;
++
++const d3Select_Bar = d3.select('#barchartx');
++const svg_Bar = d3Select_Bar.append('svg')
++    .attr('height', svgHeight_Bar)
++    .attr('width', svgWidth_Bar);
++var chartGroup_Bar = svg_Bar.append('g').attr('transform', `translate(${svgMargin_Bar.left}, ${svgMargin_Bar.top})`);
++
++var xLinearScale_Bar = d3.scaleBand()
++                        .range([0, width_Bar])
++                        .padding(0.2);
++var yLinearScale_Bar = d3.scaleLinear()
++                        .range([height_Bar, 0]);
++var gButtomAxis_Bar = chartGroup_Bar.append('g')
++                                    .attr("transform", `translate(0, ${height_Bar})`);
++var gLeftAxis_Bar = chartGroup_Bar.append('g');
++
++// const key_Bar = ['Top Deficit', 'Top Surplus', 'Top Export', 'Top Import', 'Top Total'];
++// chartGroup_Bar.selectAll("mylabels")
++//     .data(key_Bar)
++//     .enter()
++//     .append("text")
++//     .attr("x", 45)
++//     .attr("y", (d,i)=>35 + i*25)
++//     .attr('opacity', 0.5)
++//     .style("fill", d=>color(d))
++//     .text(d=>d)
++//     .attr("text-anchor", "left")
++//     .style("alignment-baseline", "middle")
++
++chartGroup_Bar.append("text")
++    .attr("x", (width_Bar / 2))
++    .attr("y", height_Bar+50)
++    .attr("text-anchor", "middle")
++    .style("font-size", "16px")
++    .text("Export (Country Trade Partner)");
++
++// chartGroup_Bar.append("text")
++//     .attr("x", svgMargin.left-250)
++//     .attr("y", 0)
++//     .attr("text-anchor", "middle")
++//     .attr('transform', `rotate(-90)`)
++//     .style("font-size", "16px")
++//     .text("Import (Million Au$)");
++
++function barchart(DATA, topx){
++    const topSlice = 10;
++    let topDATA = [];
++    let col = '';
++    switch (topx){
++        case 0: // Top Deficit
++            let temp = DATA.sort((a, b) => a.Balance - b.Balance).slice(0,topSlice);
++            for(let i=0; i<temp.length; i++){
++                topDATA.push(Object.assign({}, temp[i]))
++            }
++            for(let i=0; i<topDATA.length; i++){
++                topDATA[i].Balance *= -1
++            }
++            col = 'Balance';
++            break
++        case 1: // Top Surplus
++            topDATA = DATA.sort((a, b) => b.Balance - a.Balance).slice(0,topSlice);
++            col = 'Balance';
++            break
++        case 2: // Top Export
++            topDATA = DATA.sort((a, b) => b.Export - a.Export).slice(0,topSlice);
++            col = 'Export';
++            break
++        case 3: // Top Import
++            topDATA = DATA.sort((a, b) => b.Import - a.Import).slice(0,topSlice);
++            col = 'Import';
++            break
++        default: // Top Total
++            topDATA= DATA.sort((a, b) => b.Total - a.Total).slice(0,topSlice);
++            col = 'Total'
++    }
++
++    xLinearScale_Bar.domain(topDATA.map(d=>d.Country));
++    yLinearScale_Bar.domain([d3.min(topDATA, d=>d[col]), d3.max(topDATA, d=>d[col])]);
++
++    gButtomAxis_Bar.call(d3.axisBottom(xLinearScale_Bar))
++                    .selectAll("text")
++                    .attr("transform", "translate(-10,0)rotate(-45)")
++                    .style("text-anchor", "end");
++    gLeftAxis_Bar.call(d3.axisLeft(yLinearScale_Bar));
++
++    var gBar = chartGroup_Bar.selectAll("rect").data(topDATA)
++    gBar
++        .enter()
++        .append("rect")
++        .merge(gBar)
++        .transition().duration(1000)
++        .attr("x", d => xLinearScale_Bar(d.Country))
++        .attr("y", d => yLinearScale_Bar(d[col]))
++        .attr("width", xLinearScale_Bar.bandwidth())
++        .attr("height", d=>height_Bar-yLinearScale_Bar(d[col]))
++        .attr("fill", "orange")
++    gBar.exit().remove()
++}
++// ===============================================================================================================
++
++// ===== Treemap ==========================================================================================
++const svgHeight_TMap = 700;
++const svgWidth_TMap = 900;
++const svgMargin_TMap = {
++    top : 25,
++    right : 25,
++    bottom : 75,
++    left : 75
++}
++const width_TMap = svgWidth_TMap - svgMargin_TMap.left - svgMargin_TMap.right;
++const height_TMap = svgHeight_TMap - svgMargin_TMap.top - svgMargin_TMap.bottom;
++
++const d3Select_TMap = d3.select('#treemapx');
++const svg_TMap = d3Select_TMap.append('svg')
++    .attr('height', svgHeight_TMap)
++    .attr('width', svgWidth_TMap);
++var chartGroup_TMap = svg_TMap.append('g').attr('transform', `translate(${svgMargin_TMap.left}, ${svgMargin_TMap.top})`);
++
++
++function Treemap(DATA, tradex){
++    const tradeX = ['Balance', 'Balance', 'Export', 'Import', 'Total'];
++    let arrSurplus = [];
++    let arrDeficit = [];
++    for(let i=0; i<DATA.length; i++){
++        let dt = Object.assign({}, DATA[i]);
++        dt["colname"] = "level3";
++        if(dt.Balance < 0){
++            dt.Balance *= -1;
++            arrDeficit.push(dt)
++        }else{
++            arrSurplus.push(dt)
++        }
++    }
++    let newDATA = {'children':[{'colname':'level2', 'name':'Surplus', 'children':arrSurplus}, {'colname':'level2', 'name':'Deficit', 'children':arrDeficit}]};
++
++    const root = d3.hierarchy(newDATA).sum(d=>d[tradeX[tradex]]);
++
++    d3.treemap().size([width_TMap, height_TMap]).paddingInner(4)(root);
++
++    const color = d3.scaleOrdinal()
++        .domain(['Deficit', 'Surplus'])
++        .range(['red', 'green']);
++
++    var gTMap1 = chartGroup_TMap.selectAll('rect').data(root.leaves())
++    gTMap1
++        .enter()
++        .append('rect')
++        .merge(gTMap1)
++        .attr('x', d=>d.x0)
++        .attr('y', d=>d.y0)
++        .attr('width', d=>d.x1-d.x0)
++        .attr('height', d=>d.y1-d.y0)
++        .style('stroke', 'black')
++        .style('fill', d=>(tradeX[tradex]=='Balance')?color(d.parent.data.name):'blue');
++
++    gTMap1.exit().remove()
++
++    var gTMap2 = chartGroup_TMap.selectAll('text').data(root.leaves())
++    gTMap2
++        .enter()
++        .append('text')
++        .merge(gTMap2)
++        .text(d=>d.data.Country)
++        .attr('x', d=>d.x0+7)
++        .attr('y',d=>d.y0+20)
++        .attr('font-size', '15px')
++        .attr('fill', 'white');
++    gTMap2.exit().remove()
++
++    var gTMap3 = chartGroup_TMap.selectAll('trades').data(root.leaves())
++    gTMap3
++        .enter()
++        .append('text')
++        .merge(gTMap3)
++        .text(d=>d.data.Total)
++        .attr('x', d=>d.x0+7)
++        .attr('y',d=>d.y0+35)
++        .attr('font-size', '10px')
++        .attr('fill', 'white');
++    gTMap3.exit().remove()
++
++}
++// ===============================================================================================================
++
++// ===== Line Chart ==========================================================================================
++const svgHeight_Line = 700;
++const svgWidth_Line = 900;
++const svgMargin_Line = {
++    top : 25,
++    right : 25,
++    bottom : 75,
++    left : 75
++}
++const width_Line = svgWidth_Line - svgMargin_Line.left - svgMargin_Line.right;
++const height_Line = svgHeight_Line - svgMargin_Line.top - svgMargin_Line.bottom;
++
++const d3Select_Line = d3.select('#linechartx');
++const svg_Line = d3Select_Line.append('svg')
++    .attr('height', svgHeight_Line)
++    .attr('width', svgWidth_Line);
++var chartGroup_Line = svg_Line.append('g').attr('transform', `translate(${svgMargin_Line.left}, ${svgMargin_Line.top})`);
++
++var xLinearScale_Line = d3.scaleLinear().range([0, width_Line]);
++var yLinearScale_Line = d3.scaleLinear().range([height_Line, 0]);
++
++var gButtomAxis_Line = chartGroup_Line.append('g').attr('transform', `translate(0,${height_Line})`);
++var gLeftAxis_Line = chartGroup_Line.append('g');
++
++
++var keys = ["Export", "Import", "Balance", "Total"];
++
++var color = d3.scaleOrdinal()
++    .domain(keys)
++    .range(['red', 'green', 'blue', 'orange']);
++
++chartGroup_Line.selectAll("mydots")
++    .data(keys)
++    .enter()
++    .append("circle")
++    .attr("cx", 35)
++    .attr("cy", function(d,i){ return 35 + i*25})
++    .attr("r", 7)
++    .style("fill", function(d){ return color(d)})
++
++
++chartGroup_Line.selectAll("mylabels")
++    .data(keys)
++    .enter()
++    .append("text")
++    .attr("x", 45)
++    .attr("y", (d,i)=>35 + i*25)
++    .attr('opacity', 0.5)
++    .style("fill", d=>color(d))
++    .text(d=>d)
++    .attr("text-anchor", "left")
++    .style("alignment-baseline", "middle")
++
++chartGroup_Line.append("text")
++    .attr("x", (width_Line / 2))
++    .attr("y", height_Line+50)
++    .attr("text-anchor", "middle")
++    .style("font-size", "16px")
++    .text("Year");
++
++// chartGroup_Line.append("text")
++//     .attr("x", svgMargin.left-250)
++//     .attr("y", 0)
++//     .attr("text-anchor", "middle")
++//     .attr('transform', `rotate(-90)`)
++//     .style("font-size", "16px")
++//     .text("Import (Million Au$)");
++
++var lineExp = chartGroup_Line
++    .append('g')
++    .append("path")
++var lineImp = chartGroup_Line
++    .append('g')
++    .append("path")
++var lineBal = chartGroup_Line
++    .append('g')
++    .append("path")
++var lineTot = chartGroup_Line
++    .append('g')
++    .append("path")
++
++
++function LineChart(DATA, tradex){
++
++    xLinearScale_Line.domain([d3.min(DATA, d=>d.Year), d3.max(DATA, d=>d.Year)]);
++    yLinearScale_Line.domain([d3.min(DATA, d=>d.Trade.Balance), d3.max(DATA, d=>d.Trade.Total)]);
++    gButtomAxis_Line.call(d3.axisBottom(xLinearScale_Line));
++    gLeftAxis_Line.call(d3.axisLeft(yLinearScale_Line));
++    let expDATA = [];
++    let impDATA = [];
++    let balDATA = [];
++    let totDATA = [];
++    for(let i=0; i<DATA.length; i++){
++        expDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Export})
++        impDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Import})
++        balDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Balance})
++        totDATA.push({time:DATA[i].Year, value:DATA[i].Trade.Total})
++    }
++    lineExp
++        .datum(expDATA)
++        .transition()
++        .duration(1000)
++        .attr("d", d3.line()
++            .x(function(d) { return xLinearScale_Line(+d.time) })
++            .y(function(d) { return yLinearScale_Line(+d.value) })
++        )
++        .attr("stroke", 'red')
++        .attr("stroke-width", 4)
++        .attr('fill', 'none')
++        .attr('stroke-opacity', 0.5)
++    lineImp
++        .datum(impDATA)
++        .transition()
++        .duration(1000)
++        .attr("d", d3.line()
++            .x(function(d) { return xLinearScale_Line(+d.time) })
++            .y(function(d) { return yLinearScale_Line(+d.value) })
++        )
++        .attr("stroke", 'green')
++        .attr("stroke-width", 4)
++        .attr('fill', 'none')
++        .attr('stroke-opacity', 0.5)
++    lineBal
++        .datum(balDATA)
++        .transition()
++        .duration(1000)
++        .attr("d", d3.line()
++            .x(function(d) { return xLinearScale_Line(+d.time) })
++            .y(function(d) { return yLinearScale_Line(+d.value) })
++        )
++        .attr("stroke", 'blue')
++        .attr("stroke-width", 4)
++        .attr('fill', 'none')
++        .attr('stroke-opacity', 0.5)
++    lineTot
++        .datum(totDATA)
++        .transition()
++        .duration(1000)
++        .attr("d", d3.line()
++            .x(function(d) { return xLinearScale_Line(+d.time) })
++            .y(function(d) { return yLinearScale_Line(+d.value) })
++        )
++        .attr("stroke", 'orange')
++        .attr("stroke-width", 4)
++        .attr('fill', 'none')
++        .attr('stroke-opacity', 0.5)
++}
++// ===============================================================================================================
++
++
++function optionChanged(svalue){
++    DATA = dataFilter(svalue);
++    bscatter(DATA);
++    barchart(DATA,0);
++    Treemap(DATA,0)
++}
++
++function countryChanged(svalue){
++    const tempData = orgData;
++    cDATA = [];
++    for(let i=0; i<tempData.length; i++){
++        cDATA.push({'Year':tempData[i].Year, 'Trade':tempData[i].Trade.find(({Country})=>Country==svalue)})
++    }
++    for(let i=0; i<cDATA.length; i++){
++        delete cDATA[i].Trade.Country
++    }
++    LineChart(cDATA, 0)
++}
++
++
++d3.json('../data/aus_trade.json').then(data =>{
++    orgData = data;
++    init(orgData)
++})
+\ No newline at end of file

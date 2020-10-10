@@ -40,6 +40,7 @@ function dataFilter(fval){
     return fData
 }
 
+
 // ===== Bubble Scatter ==========================================================================================
 const svgHeight = 450;
 const svgWidth = 500;
@@ -74,6 +75,21 @@ const tooltip = d3Select.append("use")
     .style("border-radius", "5px")
     .style("padding", "10px")
     .style("color", "white");
+
+chartGroup.append("text")
+    .attr("x", (width / 2))
+    .attr("y", height+50)
+    .attr("text-anchor", "middle")
+    .style("font-size", "16px")
+    .text("Export (Million Au$)");
+
+// chartGroup.append("text")
+//     .attr("x", svgMargin.left-250)
+//     .attr("y", 1)
+//     .attr("text-anchor", "middle")
+//     .attr('transform', `rotate(-90)`)
+//     .style("font-size", "16px")
+//     .text("Import (Million Au$)");
 
 function showTooltip(d) {
     tooltip
@@ -152,12 +168,38 @@ var gButtomAxis_Bar = chartGroup_Bar.append('g')
                                     .attr("transform", `translate(0, ${height_Bar})`);
 var gLeftAxis_Bar = chartGroup_Bar.append('g');
 
+// const key_Bar = ['Top Deficit', 'Top Surplus', 'Top Export', 'Top Import', 'Top Total'];
+// chartGroup_Bar.selectAll("mylabels")
+//     .data(key_Bar)
+//     .enter()
+//     .append("text")
+//     .attr("x", 45)
+//     .attr("y", (d,i)=>35 + i*25)
+//     .attr('opacity', 0.5)
+//     .style("fill", d=>color(d))
+//     .text(d=>d)
+//     .attr("text-anchor", "left")
+//     .style("alignment-baseline", "middle")
+
+chartGroup_Bar.append("text")
+    .attr("x", (width_Bar / 2))
+    .attr("y", height_Bar+50)
+    .attr("text-anchor", "middle")
+    .style("font-size", "16px")
+    .text("Export (Country Trade Partner)");
+
+// chartGroup_Bar.append("text")
+//     .attr("x", svgMargin.left-250)
+//     .attr("y", 0)
+//     .attr("text-anchor", "middle")
+//     .attr('transform', `rotate(-90)`)
+//     .style("font-size", "16px")
+//     .text("Import (Million Au$)");
 
 function barchart(DATA, topx){
     const topSlice = 10;
     let topDATA = [];
     let col = '';
-    // console.log('DATA');
     switch (topx){
         case 0: // Top Deficit
             let temp = DATA.sort((a, b) => a.Balance - b.Balance).slice(0,topSlice);
@@ -205,7 +247,7 @@ function barchart(DATA, topx){
         .attr("y", d => yLinearScale_Bar(d[col]))
         .attr("width", xLinearScale_Bar.bandwidth())
         .attr("height", d=>height_Bar-yLinearScale_Bar(d[col]))
-        .attr("fill", "pink")
+        .attr("fill", "orange")
     gBar.exit().remove()
 }
 // ===============================================================================================================
@@ -319,6 +361,48 @@ var gButtomAxis_Line = chartGroup_Line.append('g').attr('transform', `translate(
 var gLeftAxis_Line = chartGroup_Line.append('g');
 
 
+var keys = ["Export", "Import", "Balance", "Total"];
+
+var color = d3.scaleOrdinal()
+    .domain(keys)
+    .range(['red', 'green', 'blue', 'orange']);
+
+chartGroup_Line.selectAll("mydots")
+    .data(keys)
+    .enter()
+    .append("circle")
+    .attr("cx", 35)
+    .attr("cy", function(d,i){ return 35 + i*25})
+    .attr("r", 7)
+    .style("fill", function(d){ return color(d)})
+
+
+chartGroup_Line.selectAll("mylabels")
+    .data(keys)
+    .enter()
+    .append("text")
+    .attr("x", 45)
+    .attr("y", (d,i)=>35 + i*25)
+    .attr('opacity', 0.5)
+    .style("fill", d=>color(d))
+    .text(d=>d)
+    .attr("text-anchor", "left")
+    .style("alignment-baseline", "middle")
+
+chartGroup_Line.append("text")
+    .attr("x", (width_Line / 2))
+    .attr("y", height_Line+50)
+    .attr("text-anchor", "middle")
+    .style("font-size", "16px")
+    .text("Year");
+
+// chartGroup_Line.append("text")
+//     .attr("x", svgMargin.left-250)
+//     .attr("y", 0)
+//     .attr("text-anchor", "middle")
+//     .attr('transform', `rotate(-90)`)
+//     .style("font-size", "16px")
+//     .text("Import (Million Au$)");
 
 var lineExp = chartGroup_Line
     .append('g')
@@ -361,6 +445,7 @@ function LineChart(DATA, tradex){
         .attr("stroke", 'red')
         .attr("stroke-width", 4)
         .attr('fill', 'none')
+        .attr('stroke-opacity', 0.5)
     lineImp
         .datum(impDATA)
         .transition()
@@ -372,6 +457,7 @@ function LineChart(DATA, tradex){
         .attr("stroke", 'green')
         .attr("stroke-width", 4)
         .attr('fill', 'none')
+        .attr('stroke-opacity', 0.5)
     lineBal
         .datum(balDATA)
         .transition()
@@ -383,6 +469,7 @@ function LineChart(DATA, tradex){
         .attr("stroke", 'blue')
         .attr("stroke-width", 4)
         .attr('fill', 'none')
+        .attr('stroke-opacity', 0.5)
     lineTot
         .datum(totDATA)
         .transition()
@@ -391,9 +478,10 @@ function LineChart(DATA, tradex){
             .x(function(d) { return xLinearScale_Line(+d.time) })
             .y(function(d) { return yLinearScale_Line(+d.value) })
         )
-        .attr("stroke", 'yellow')
+        .attr("stroke", 'orange')
         .attr("stroke-width", 4)
         .attr('fill', 'none')
+        .attr('stroke-opacity', 0.5)
 }
 // ===============================================================================================================
 

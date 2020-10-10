@@ -22,12 +22,12 @@
             <div id="bscatter">
                 <div><select id="selDataset" onchange="optionChanged(this.value)"></select></div>
             </div>
-            <div>
-                <div onclick="barchart(DATA,0);Treemap(DATA,0)"><a>Top Deficit</a></div>
+            <div style="white-space: nowrap">
+                <nobr><div onclick="barchart(DATA,0);Treemap(DATA,0)"><a>Top Deficit</a></div>
                 <div onclick="barchart(DATA,1);Treemap(DATA,1)">Top Surplus</div>
                 <div onclick="barchart(DATA,2);Treemap(DATA,2)">Top Export</div>
                 <div onclick="barchart(DATA,3);Treemap(DATA,3)">Top Import</div>
-                <div onclick="barchart(DATA,4);Treemap(DATA,4)">Top Total</div>
+                <div onclick="barchart(DATA,4);Treemap(DATA,4)">Top Total</div></nobr>
                 <div id="barchartx"></div>
             </div>
             <div id="treemapx"></div>
