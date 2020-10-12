@@ -139,6 +139,7 @@ dmypy.json
 .idea/codeStyles/codeStyleConfig.xml
 
 #api keys
+config.js
 .idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_10_34__Default_Changelist_.xml
 .idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_10_48__Default_Changelist_.xml
 .idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_10_34_[Default_Changelist]/shelved.patch
